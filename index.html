@@ -685,6 +685,7 @@
       <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
         <input type="hidden" name="access_key" value="a220e500-a3bd-47e5-aa0a-fdf375adf482">
         <input type="hidden" name="subject" value="New inquiry from turiaventures.com">
+        <input type="hidden" name="redirect" value="https://turiaventures.com/#contact">
         <div class="form-grid">
           <div class="field">
             <label for="f-name">Name</label>
@@ -801,7 +802,7 @@
       } else {
         throw new Error();
       }
-    } catch {
+    } catch (err) {
       msg.textContent = 'Something went wrong. Please email mikaela@turiaventures.com directly.';
       msg.className = 'form-msg error';
       btn.textContent = 'Send Inquiry';
