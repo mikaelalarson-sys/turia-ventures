@@ -365,6 +365,103 @@
     display: block;
   }
 
+  /* ── Form ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-grid .full { grid-column: 1 / -1; }
+  .field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .field label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .field .opt {
+    font-size: 0.68rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 300;
+    margin-left: 4px;
+  }
+  .field input, .field select, .field textarea {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0.6rem 0.75rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--fg);
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: 2px solid var(--blue);
+    outline-offset: -1px;
+    border-color: transparent;
+  }
+  .field textarea { resize: vertical; min-height: 80px; }
+  .field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2rem;
+  }
+  .check-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.1rem;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.83rem;
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 300;
+  }
+  .check-item input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    accent-color: var(--blue);
+    cursor: pointer;
+  }
+  .form-submit {
+    display: block;
+    width: 100%;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--blue-lt); }
+  .form-submit:disabled { opacity: 0.6; cursor: default; }
+  .form-msg {
+    font-size: 0.88rem;
+    padding: 0.75rem 1rem;
+    border-radius: 2px;
+    display: none;
+  }
+  .form-msg.success { background: #DCFCE7; color: #166534; display: block; }
+  .form-msg.error   { background: #FEE2E2; color: #991B1B; display: block; }
+
   /* ── Footer ── */
   footer {
     padding-block: 2rem;
@@ -465,46 +562,41 @@
       </div>
       <div class="service-item">
         <span class="service-num">02</span>
-        <span class="service-name">Empadron</span>
+        <span class="service-name">Padron (empadron)</span>
         <span class="service-desc">Officially register your address.</span>
       </div>
       <div class="service-item">
         <span class="service-num">03</span>
         <span class="service-name">School Enrollment</span>
-        <span class="service-desc">School applications in public and semi-public schools.</span>
+        <span class="service-desc">School applications in public and semi-public schools. For middle and high school students to get recognition for foreign academic credit (homologación y convalidación de títulos).</span>
       </div>
       <div class="service-item">
         <span class="service-num">04</span>
-        <span class="service-name">Schooling Recognition</span>
-        <span class="service-desc">For middle and high school students to get recognition for foreign academic credit.</span>
-      </div>
-      <div class="service-item">
-        <span class="service-num">05</span>
-        <span class="service-name">Spanish Driver's License</span>
+        <span class="service-name">Spanish Driver's License (Carnet)</span>
         <span class="service-desc">Guide to complete the written and practical driving test to obtain the carnet.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">06</span>
-        <span class="service-name">Familia Numerosa</span>
+        <span class="service-num">05</span>
+        <span class="service-name">Large Family Card (Familia Numerosa)</span>
         <span class="service-desc">Large family card for additional points to enter into schools as well as discount on transport, museums, and more.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">07</span>
+        <span class="service-num">06</span>
         <span class="service-name">Digital Signature</span>
         <span class="service-desc">Set up digital signature needed for most online government processes.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">08</span>
+        <span class="service-num">07</span>
         <span class="service-name">Utility &amp; Cell Phone Set Up</span>
         <span class="service-desc">Assistance setting up a cellular service, wifi, electricity, gas, etc.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">09</span>
+        <span class="service-num">08</span>
         <span class="service-name">Extracurricular Activities</span>
         <span class="service-desc">Finding activities, setting up trials, and enrollment.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">10</span>
+        <span class="service-num">09</span>
         <span class="service-name">Buying a Car</span>
         <span class="service-desc">Walk through of the steps to buy a used car.</span>
       </div>
@@ -549,18 +641,56 @@
     <div>
       <p class="eyebrow">Get in touch</p>
       <h2>Ready to get started?</h2>
-      <p style="margin-top:0.75rem;font-size:0.95rem">Set up an initial consultation and I'll create a custom plan to help with your specific needs. Happy to answer general questions too.</p>
-      <div class="contact-detail" style="margin-top:2.5rem">
-        <div>
-          <p class="contact-label">Email</p>
-          <p class="contact-value">info@turiaventures.com</p>
-          <button class="contact-copy" onclick="copyEmail(this)">Copy address</button>
+      <p style="margin-top:0.75rem;margin-bottom:2rem;font-size:0.95rem">Fill out the form and I'll be in touch to set up an initial consultation. Happy to answer general questions too.</p>
+
+      <form id="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required placeholder="your@email.com">
+          </div>
+          <div class="field">
+            <label for="f-phone">Cell Phone <span class="opt">(optional)</span></label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+1 555 000 0000">
+          </div>
+          <div class="field">
+            <label for="f-timeline">When are you planning to move?</label>
+            <select id="f-timeline" name="timeline" required>
+              <option value="" disabled selected>Select a timeframe</option>
+              <option>Within 3 months</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Already in Valencia</option>
+              <option>Just exploring</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>What do you need help with?</label>
+            <div class="check-group">
+              <label class="check-item"><input type="checkbox" name="services" value="Apartment & Neighborhood Guidance"> Apartment &amp; Neighborhood</label>
+              <label class="check-item"><input type="checkbox" name="services" value="Padron"> Padron</label>
+              <label class="check-item"><input type="checkbox" name="services" value="School"> School</label>
+              <label class="check-item"><input type="checkbox" name="services" value="Driver's License"> Driver's License</label>
+              <label class="check-item"><input type="checkbox" name="services" value="Large Family Card"> Large Family Card</label>
+              <label class="check-item"><input type="checkbox" name="services" value="Digital Signature"> Digital Signature</label>
+              <label class="check-item"><input type="checkbox" name="services" value="Activities"> Activities</label>
+              <label class="check-item"><input type="checkbox" name="services" value="Other"> Other</label>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="f-msg">Anything else? <span class="opt">(optional)</span></label>
+            <textarea id="f-msg" name="message" placeholder="Family size, specific questions, anything else on your mind..."></textarea>
+          </div>
         </div>
-        <div>
-          <p class="contact-label">Based in</p>
-          <p class="contact-value" style="font-size:0.95rem;font-family:var(--sans);font-weight:300">Valencia, Spain</p>
-        </div>
-      </div>
+        <div class="form-msg" id="form-msg"></div>
+        <button type="submit" class="form-submit" id="form-btn">Send Inquiry</button>
+      </form>
+
+      <p style="margin-top:2rem;font-size:0.82rem;color:var(--muted)">Or email directly: <a href="mailto:info@turiaventures.com" style="color:var(--blue)">info@turiaventures.com</a></p>
     </div>
     <div class="contact-photo"><img src="photo.jpg" alt="Mikaela"></div>
   </div>
@@ -594,5 +724,38 @@
       const target = document.querySelector(a.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
+  });
+
+  const form = document.getElementById('inquiry-form');
+  const btn  = document.getElementById('form-btn');
+  const msg  = document.getElementById('form-msg');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    msg.className = 'form-msg';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        msg.textContent = 'Thank you! I'll be in touch soon.';
+        msg.className = 'form-msg success';
+        form.reset();
+        btn.textContent = 'Send Inquiry';
+        btn.disabled = false;
+      } else {
+        throw new Error();
+      }
+    } catch {
+      msg.textContent = 'Something went wrong. Please email info@turiaventures.com directly.';
+      msg.className = 'form-msg error';
+      btn.textContent = 'Send Inquiry';
+      btn.disabled = false;
+    }
   });
 </script>
