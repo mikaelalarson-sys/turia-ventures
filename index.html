@@ -432,12 +432,12 @@
     user-select: none;
   }
   .check-item input[type="checkbox"] { display: none; }
-  .check-item:has(input:checked) {
+  .check-item.selected {
     background: var(--blue);
     border-color: var(--blue);
     color: #fff;
   }
-  .check-item:hover:not(:has(input:checked)) {
+  .check-item:not(.selected):hover {
     border-color: var(--blue);
     color: var(--blue);
   }
@@ -767,6 +767,13 @@
     });
   });
 
+  document.querySelectorAll('.check-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const cb = this.querySelector('input[type="checkbox"]');
+      this.classList.toggle('selected', cb.checked);
+    });
+  });
+
   const form = document.getElementById('inquiry-form');
   const btn  = document.getElementById('form-btn');
   const msg  = document.getElementById('form-msg');
@@ -788,6 +795,7 @@
         msg.textContent = 'Thank you! I'll be in touch soon.';
         msg.className = 'form-msg success';
         form.reset();
+        document.querySelectorAll('.check-item').forEach(i => i.classList.remove('selected'));
         btn.textContent = 'Send Inquiry';
         btn.disabled = false;
       } else {
