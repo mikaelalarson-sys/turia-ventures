@@ -413,26 +413,33 @@
     padding-right: 2rem;
   }
   .check-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.1rem;
   }
   .check-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.83rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.82rem;
     color: var(--muted);
-    cursor: pointer;
-    font-weight: 300;
+    font-weight: 400;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    user-select: none;
   }
-  .check-item input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    flex-shrink: 0;
-    accent-color: var(--blue);
-    cursor: pointer;
+  .check-item input[type="checkbox"] { display: none; }
+  .check-item:has(input:checked) {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .check-item:hover:not(:has(input:checked)) {
+    border-color: var(--blue);
+    color: var(--blue);
   }
   .form-submit {
     display: block;
