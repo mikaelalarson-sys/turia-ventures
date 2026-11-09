@@ -1,4 +1,5 @@
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Turia Ventures</title>
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -371,12 +372,23 @@
 
   /* ── Responsive ── */
   @media (max-width: 600px) {
-    .nav-links { display: none; }
+    .nav-links {
+      gap: 1.25rem;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    .logo svg { height: 38px; }
+    .hero { padding-block: 3.5rem 3rem; }
+    .hero .inner { gap: 1.5rem; }
+    .section { padding-block: 3rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo { aspect-ratio: 4/3; }
     .contact-section .inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .contact-photo { order: -1; aspect-ratio: 4/3; }
     h1 { font-size: 2.2rem; }
+    .services-grid { grid-template-columns: 1fr; }
   }
 </style>
 
