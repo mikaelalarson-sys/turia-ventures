@@ -306,7 +306,7 @@
   }
   .contact-section .inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 4rem;
     align-items: start;
   }
@@ -354,6 +354,7 @@
   .contact-photo {
     width: 100%;
     aspect-ratio: 3/4;
+    max-height: 320px;
     border-radius: 2px;
     overflow: hidden;
   }
@@ -367,11 +368,10 @@
 
   /* ── Form ── */
   .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
-  .form-grid .full { grid-column: 1 / -1; }
   .field { display: flex; flex-direction: column; gap: 0.3rem; }
   .field label {
     font-size: 0.72rem;
@@ -700,7 +700,7 @@
               <option>Just exploring</option>
             </select>
           </div>
-          <div class="field full">
+          <div class="field">
             <label>What do you need help with?</label>
             <div class="check-group">
               <label class="check-item"><input type="checkbox" name="services" value="Apartment & Neighborhood Guidance"> Apartment &amp; Neighborhood</label>
@@ -713,7 +713,7 @@
               <label class="check-item"><input type="checkbox" name="services" value="Other"> Other</label>
             </div>
           </div>
-          <div class="field full">
+          <div class="field">
             <label for="f-msg">Anything else? <span class="opt">(optional)</span></label>
             <textarea id="f-msg" name="message" placeholder="Family size, specific questions, anything else on your mind..."></textarea>
           </div>
