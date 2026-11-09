@@ -792,7 +792,7 @@
       });
       const json = await res.json();
       if (json.success) {
-        msg.textContent = 'Thank you! I'll be in touch soon.';
+        msg.textContent = "Thank you! I'll be in touch soon.";
         msg.className = 'form-msg success';
         form.reset();
         document.querySelectorAll('.check-item').forEach(i => i.classList.remove('selected'));
