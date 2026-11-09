@@ -247,11 +247,11 @@
     flex-direction: column;
     gap: 0.5rem;
   }
-  .service-num {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-    font-weight: 500;
+  .service-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--blue);
+    flex-shrink: 0;
   }
   .service-name {
     font-family: var(--serif);
@@ -498,6 +498,38 @@
   }
 </style>
 
+<!-- Icon defs -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+  </symbol>
+  <symbol id="i-id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 9h4M14 12h4M14 15h2"/>
+  </symbol>
+  <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </symbol>
+  <symbol id="i-wheel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+    <line x1="12" y1="2" x2="12" y2="9"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="19.07" y1="4.93" x2="14.83" y2="9.17"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+  </symbol>
+  <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14l4 4v4a2 2 0 0 1-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>
+  </symbol>
+</svg>
+
 <!-- Nav -->
 <nav>
   <a href="#" class="logo">
@@ -556,47 +588,47 @@
     </div>
     <div class="services-grid">
       <div class="service-item">
-        <span class="service-num">01</span>
+        <svg class="service-icon"><use href="#i-home"/></svg>
         <span class="service-name">Apartment &amp; Neighborhood Guidance</span>
         <span class="service-desc">Find the right area and apartment, schedule viewings and sign a contract.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">02</span>
+        <svg class="service-icon"><use href="#i-id"/></svg>
         <span class="service-name">Padron (Empadron)</span>
         <span class="service-desc">Officially register your address. Needed prior to enrolling in school.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">03</span>
+        <svg class="service-icon"><use href="#i-school"/></svg>
         <span class="service-name">School Enrollment</span>
         <span class="service-desc">School applications in public and semi-public schools. Requests to recognize foreign academic credit for middle and high-school (homologacion y convalidacion de titulos.)</span>
       </div>
       <div class="service-item">
-        <span class="service-num">04</span>
+        <svg class="service-icon"><use href="#i-wheel"/></svg>
         <span class="service-name">Spanish Driver's License (Carnet)</span>
         <span class="service-desc">Guide to complete the written and practical driving test to obtain the carnet.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">05</span>
+        <svg class="service-icon"><use href="#i-users"/></svg>
         <span class="service-name">Large Family Card (Familia Numerosa)</span>
         <span class="service-desc">Provides additional points to enter into schools as well as discount on transport, museums, and more.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">06</span>
+        <svg class="service-icon"><use href="#i-pen"/></svg>
         <span class="service-name">Digital Signature</span>
         <span class="service-desc">Set up the digital signature needed for most online government processes.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">07</span>
+        <svg class="service-icon"><use href="#i-phone"/></svg>
         <span class="service-name">Utility &amp; Cell Phone Set Up</span>
         <span class="service-desc">Assistance setting up a cellular service, wifi, electricity, gas, etc.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">08</span>
+        <svg class="service-icon"><use href="#i-music"/></svg>
         <span class="service-name">Extracurricular Activities</span>
         <span class="service-desc">Finding activities, setting up trials, and enrollment.</span>
       </div>
       <div class="service-item">
-        <span class="service-num">09</span>
+        <svg class="service-icon"><use href="#i-car"/></svg>
         <span class="service-name">Buying a Car</span>
         <span class="service-desc">Walk through of the steps to buy a used car.</span>
       </div>
@@ -690,7 +722,7 @@
         <button type="submit" class="form-submit" id="form-btn">Send Inquiry</button>
       </form>
 
-      <p style="margin-top:2rem;font-size:0.82rem;color:var(--muted)">Or email directly: <a href="mailto:info@turiaventures.com" style="color:var(--blue)">info@turiaventures.com</a></p>
+      <p style="margin-top:2rem;font-size:0.82rem;color:var(--muted)">Or email directly: <a href="mailto:mikaela@turiaventures.com" style="color:var(--blue)">mikaela@turiaventures.com</a></p>
     </div>
     <div class="contact-photo"><img src="photo.jpg" alt="Mikaela"></div>
   </div>
@@ -704,7 +736,7 @@
 
 <script>
   function copyEmail(btn) {
-    navigator.clipboard.writeText('info@turiaventures.com')
+    navigator.clipboard.writeText('mikaela@turiaventures.com')
       .then(() => {
         btn.textContent = 'Copied';
         btn.classList.add('copied');
@@ -752,7 +784,7 @@
         throw new Error();
       }
     } catch {
-      msg.textContent = 'Something went wrong. Please email info@turiaventures.com directly.';
+      msg.textContent = 'Something went wrong. Please email mikaela@turiaventures.com directly.';
       msg.className = 'form-msg error';
       btn.textContent = 'Send Inquiry';
       btn.disabled = false;
