@@ -675,7 +675,9 @@
       <h2>Ready to get started?</h2>
       <p style="margin-top:0.75rem;margin-bottom:2rem;font-size:0.95rem">Helping individuals and families navigate the process of settling in Valencia and completing everything needed from choosing a neighborhood to live, renting an apartment, enrolling in local schools, or even getting your Spanish driver's license.</p>
 
-      <form id="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="a220e500-a3bd-47e5-aa0a-fdf375adf482">
+        <input type="hidden" name="subject" value="New inquiry from turiaventures.com">
         <div class="form-grid">
           <div class="field">
             <label for="f-name">Name</label>
@@ -774,7 +776,8 @@
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
-      if (res.ok) {
+      const json = await res.json();
+      if (json.success) {
         msg.textContent = 'Thank you! I'll be in touch soon.';
         msg.className = 'form-msg success';
         form.reset();
