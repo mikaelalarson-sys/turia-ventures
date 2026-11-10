@@ -123,12 +123,11 @@
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 480px;
+    height: clamp(480px, calc(100vh - 73px), 800px);
   }
   .hero-photo {
     position: relative;
     overflow: hidden;
-    min-height: 380px;
   }
   .hero-photo img {
     width: 100%;
@@ -241,6 +240,7 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
