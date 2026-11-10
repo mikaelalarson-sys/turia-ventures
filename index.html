@@ -232,7 +232,7 @@
   .signature {
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(12rem, 60vw, 36rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     color: var(--gold);
     margin-top: 0.5rem;
     line-height: 1;
@@ -262,6 +262,7 @@
   .services-grid::after {
     content: '';
     background: var(--bg-tint);
+    display: none;
   }
   .service-item {
     background: var(--bg-tint);
@@ -498,6 +499,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo { aspect-ratio: 3/4; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid::after { display: block; }
   }
 
   @media (max-width: 600px) {
