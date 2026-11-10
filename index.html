@@ -122,10 +122,10 @@
   /* ── Hero ── */
   .hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: clamp(480px, calc(100vh - 73px), 800px);
+    grid-template-columns: 1fr;
   }
   .hero-photo {
+    height: clamp(320px, 45vh, 520px);
     position: relative;
     overflow: hidden;
   }
@@ -133,15 +133,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: center top;
     display: block;
   }
   .hero-text {
     background: var(--bg-tint);
-    padding: 3.5rem clamp(1.5rem, 4vw, 3.5rem);
+    padding: 3.5rem clamp(24px, 5vw, 80px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 1.25rem;
   }
   .eyebrow {
@@ -189,7 +188,7 @@
     font-family: var(--sans);
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     font-weight: 500;
-    color: var(--blue);
+    color: var(--gold);
     text-transform: none;
     letter-spacing: .02em;
   }
@@ -485,8 +484,8 @@
 
   /* ── Responsive ── */
   @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; height: auto; }
-    .hero-photo { min-height: 300px; max-height: 420px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo { height: clamp(240px, 55vw, 320px); }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo { aspect-ratio: 3/4; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -543,14 +542,14 @@
 <!-- Nav -->
 <nav>
   <a href="#" class="logo">
-    <svg viewBox="0 0 500 60" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 348 60" xmlns="http://www.w3.org/2000/svg">
       <g transform="scale(0.175) translate(-282,-61)">
         <path d="M293.879 141.501C292.939 142.721 291.992 143.937 291.039 145.151C282.479 155.941 282.929 157.131 292.969 166.831C317.799 190.811 353.079 192.171 377.669 178.861C388.579 172.961 388.459 172.991 379.099 165.531C364.759 154.101 354.649 139.691 350.079 121.811C348.899 117.191 346.859 115.961 342.219 116.341C323.479 117.891 305.749 126.921 293.879 141.501Z" fill="#8DC63F"/>
         <path d="M398.289 71.0208C387.119 61.7908 386.989 60.9808 376.589 72.6908C353.119 99.1308 359.459 138.021 389.689 156.341C392.929 158.301 395.159 157.791 397.919 155.531C424.419 133.791 424.629 93.6008 398.289 71.0208Z" fill="#8DC63F"/>
         <path d="M354.719 273.351C354.719 345.421 413.138 403.851 485.208 403.851C557.288 403.851 615.708 345.421 615.708 273.351C615.708 201.281 557.288 142.851 485.208 142.851C413.138 142.851 354.719 201.281 354.719 273.351ZM384.749 257.201C384.749 201.721 429.728 156.741 485.208 156.741C540.698 156.741 585.679 201.721 585.679 257.201C585.679 312.691 540.698 357.671 485.208 357.671C429.728 357.671 384.749 312.691 384.749 257.201Z" fill="#F89D2C"/>
       </g>
       <text x="70" y="44" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" fill="#0F70B7">Turia</text>
-      <text x="148" y="44" font-family="'DM Sans', system-ui, sans-serif" font-size="23" font-weight="300" fill="#F59E19" letter-spacing="1">Ventures</text>
+      <text x="188" y="44" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="400" fill="#F59E19">Ventures</text>
     </svg>
   </a>
   <ul class="nav-links">
