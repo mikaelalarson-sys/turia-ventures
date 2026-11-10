@@ -55,6 +55,7 @@
 
   *, *::before, *::after { box-sizing: border-box; }
 
+  html { overflow-x: hidden; }
   body {
     margin: 0;
     background: var(--bg);
@@ -88,6 +89,7 @@
   .logo svg {
     height: 48px;
     width: auto;
+    max-width: 55vw;
   }
   .nav-links {
     display: flex;
@@ -474,7 +476,7 @@
     .hero { grid-template-columns: 1fr; }
     .hero-photo { min-height: 300px; max-height: 420px; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-photo { aspect-ratio: 4/5; max-height: 360px; }
+    .about-photo { aspect-ratio: 3/4; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
