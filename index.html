@@ -333,6 +333,36 @@
     color: var(--muted);
   }
 
+  /* ── Testimonials ── */
+  .testimonials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .testimonial {
+    border-left: 3px solid var(--gold);
+    padding-left: 1.75rem;
+    max-width: 640px;
+  }
+  .testimonial blockquote {
+    margin: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--fg);
+  }
+  .testimonial cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
   /* ── Contact ── */
   .contact-section {
     background: var(--bg-tint);
@@ -602,7 +632,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li id="nav-testimonials" style="display:none"><a href="#testimonials">Testimonials</a></li>
+    <li id="nav-testimonials"><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -741,10 +771,16 @@
 </section>
 
 <!-- Testimonials -->
-<section class="section" id="testimonials" style="display:none">
+<section class="section" id="testimonials">
   <div class="inner">
     <p class="eyebrow">What people say</p>
     <h2>Testimonials</h2>
+    <div class="testimonials-list">
+      <div class="testimonial">
+        <blockquote>"Mikaela recently assisted my high school aged daughter's move to Valencia for a foreign exchange experience. Spain has an overwhelming amount of hoops to jump through! But Mikaela was so knowledgeable about Spain's requirements, walked us through everything, and did the heavy lifting for us. She visited the local municipal building and prospective school numerous times to inquire about our specific situation and submit documents. She kindly updated me on documents I needed to obtain on my end. She encouraged me through the process, and made it feel doable. We literally could not have done it without her!"</blockquote>
+        <cite>Desirée Funk</cite>
+      </div>
+    </div>
   </div>
 </section>
 
