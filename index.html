@@ -261,10 +261,14 @@
     background: var(--rule);
     border: 1px solid var(--rule);
   }
+  .services-grid::before {
+    content: '';
+    background: var(--bg-tint);
+    order: 1;
+  }
   .services-grid::after {
     content: '';
     background: var(--bg-tint);
-    display: none;
   }
   .service-item {
     background: var(--bg-tint);
@@ -518,7 +522,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo { aspect-ratio: 3/4; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-grid::after { display: block; }
+    .services-grid::before, .services-grid::after { display: none; }
     .contact-grid { grid-template-columns: 1fr; min-height: auto; }
     .contact-photo-col { height: 280px; }
   }
@@ -541,6 +545,9 @@
 
 <!-- Icon defs -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-passport" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 16h8M8 19h5"/>
+  </symbol>
   <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
   </symbol>
@@ -616,6 +623,11 @@
       <p style="margin-top:0.75rem">Spanish bureaucracy can be confusing and time-consuming, especially in a new language. I will assist you through each step including submitting requests and attending appointments.</p>
     </div>
     <div class="services-grid">
+      <div class="service-item">
+        <svg class="service-icon"><use href="#i-passport"/></svg>
+        <span class="service-name">Visa Guidance</span>
+        <span class="service-desc">Help navigating the main visa options for moving to Spain — Non-Lucrative, Digital Nomad, and others — including understanding requirements, preparing documents, and knowing what to expect at each stage.</span>
+      </div>
       <div class="service-item">
         <svg class="service-icon"><use href="#i-home"/></svg>
         <span class="service-name">Apartment &amp; Neighborhood Guidance</span>
