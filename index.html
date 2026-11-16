@@ -141,6 +141,27 @@
   }
   .nav-links a:hover { color: var(--blue); }
 
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--fg);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
   /* ── Sections ── */
   .section {
     padding-block: 5rem;
@@ -585,9 +606,24 @@
   }
 
   @media (max-width: 600px) {
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 0.75rem; letter-spacing: 0; }
-    .logo svg { height: 38px; max-width: 36vw; }
+    nav { flex-wrap: wrap; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 0;
+      padding-block: 0.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    nav.nav-open .nav-links { display: flex; }
+    .nav-links a {
+      display: block;
+      padding: 0.65rem 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+    }
+    .logo svg { height: 38px; }
     .section { padding-block: 3rem; }
     h1 { font-size: 2rem; }
     .hero-text { padding: 2.5rem 1.25rem; }
@@ -595,8 +631,6 @@
 
   @media (max-width: 380px) {
     .services-grid { grid-template-columns: 1fr; }
-    .nav-links { gap: 0.75rem; }
-    .logo svg { max-width: 28vw; }
   }
 </style>
 
@@ -653,6 +687,9 @@
       <text x="152" y="44" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" fill="#F59E19">Ventures</text>
     </svg>
   </a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -660,6 +697,22 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = toggle.closest('nav');
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('nav-open'));
+    });
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        nav.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 
 <!-- Hero -->
 <section class="hero">
