@@ -368,26 +368,30 @@
   }
 
   /* ── Testimonials ── */
-  .testimonials-section {
-    padding: 0;
-  }
   .testimonials-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 3fr 2fr;
+    gap: 4rem;
     align-items: start;
+    width: 100%;
   }
-  .testimonials-content {
-    padding: 5rem clamp(24px, 5vw, 80px);
+  .testimonials-text {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    min-width: 0;
   }
   .testimonials-photo {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 2/3;
     overflow: hidden;
   }
   .testimonials-photo img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     display: block;
   }
   .testimonials-list {
@@ -615,7 +619,6 @@
     .contact-grid { grid-template-columns: 1fr; min-height: auto; }
     .contact-photo-col { height: 280px; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .testimonials-photo { height: 280px; }
   }
 
   @media (max-width: 600px) {
@@ -847,9 +850,10 @@
 </section>
 
 <!-- Testimonials -->
-<section class="section testimonials-section" id="testimonials">
-  <div class="testimonials-grid">
-    <div class="testimonials-content">
+<section class="section" id="testimonials">
+  <div class="inner">
+    <div class="testimonials-grid">
+      <div class="testimonials-text">
     <p class="eyebrow">What people say</p>
     <h2>Testimonials</h2>
     <div class="testimonials-list">
@@ -866,9 +870,10 @@
         <cite>JP Zhang, Miami, Florida</cite>
       </div>
     </div>
-    </div>
-    <div class="testimonials-photo">
-      <img src="turia-gardens.jpg" alt="Jacaranda trees in the Jardines del Río Turia, Valencia">
+      </div>
+      <div class="testimonials-photo">
+        <img src="turia-gardens.jpg" alt="Jacaranda trees in the Jardines del Río Turia, Valencia">
+      </div>
     </div>
   </div>
 </section>
