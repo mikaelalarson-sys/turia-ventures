@@ -368,6 +368,30 @@
   }
 
   /* ── Testimonials ── */
+  .testimonials-section {
+    padding: 0;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    min-height: 580px;
+  }
+  .testimonials-content {
+    padding: 5rem clamp(24px, 5vw, 80px);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .testimonials-photo {
+    overflow: hidden;
+  }
+  .testimonials-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
   .testimonials-list {
     display: flex;
     flex-direction: column;
@@ -376,7 +400,7 @@
   .testimonial {
     border-left: 3px solid var(--gold);
     padding-left: 1.75rem;
-    max-width: 640px;
+    max-width: 580px;
   }
   .testimonial blockquote {
     margin: 0;
@@ -592,6 +616,8 @@
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: 1fr; min-height: auto; }
     .contact-photo-col { height: 280px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonials-photo { height: 280px; }
   }
 
   @media (max-width: 600px) {
@@ -823,8 +849,9 @@
 </section>
 
 <!-- Testimonials -->
-<section class="section" id="testimonials">
-  <div class="inner">
+<section class="section testimonials-section" id="testimonials">
+  <div class="testimonials-grid">
+    <div class="testimonials-content">
     <p class="eyebrow">What people say</p>
     <h2>Testimonials</h2>
     <div class="testimonials-list">
@@ -840,6 +867,10 @@
         Since we were only there for a month, Mikaela sent us local events and suggested a day trip to the Albufera for paella and the beach, which helped us make so many beautiful memories. I cannot recommend Mikaela enough!"</blockquote>
         <cite>JP Zhang, Miami, Florida</cite>
       </div>
+    </div>
+    </div>
+    <div class="testimonials-photo">
+      <img src="turia-gardens.jpg" alt="Jacaranda trees in the Jardines del Río Turia, Valencia">
     </div>
   </div>
 </section>
